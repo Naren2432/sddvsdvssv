@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./node_modules/image-conversion/build/conversion.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js" defer></script>
+    <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js" defer></script>
+</head>
+
+<body>
+
+    <div class="mycontainer">
+        <header class="primary">
+            <h1>Image Converter and Compressor</h1>
+        </header>
+        <div class="pic">
+            <input id="file-input" type="file" accept="image/*" style="display: none;">
+            <input type="button" class="btn btn-primary btn-block p-3" value="Upload Image"
+                onclick="document.querySelector('#file-input').click();" />
+            <div class="preview">
+                <img src="./markus-spiske-9IDgEybpF6o-unsplash.jpg" alt="image-preview" height="400px" width="500px">
+            </div>
+        </div>
+        <form action="#" id="quality-options">
+            <fieldset class="row m-5">
+                <div class="options-label">Compression Level</div>
+                <div class="col-sm-10 options">
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="min-compression" name="quality" value="0.75">
+                        <label class="form-check-label" for="min-compression" id="min-compression-label">Min</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="normal-compression" name="quality" value="0.5"
+                            checked>
+                        <label class="form-check-label" for="normal-compression"
+                            id="normal-compression-label">Normal</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="high-compression" name="quality" value="0.25">
+                        <label class="form-check-label" for="high-compression" id="high-compression-label">High</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="max-compression" name="quality" value="0.1">
+                        <label class="form-check-label" for="max-compression" id="max-compression-label">Max</label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="row m-5">
+                <div class="options-label">Output Format</div>
+                <div class="col-sm-10 options">
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="jpeg-format" name="format" value="image/jpeg"
+                            checked>
+                        <label for="jpeg-format" class="form-check-label" id="jpeg-format-label">JPEG</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="png-format" name="format" value="image/png">
+                        <label for="png-format" class="form-check-label" id="png-format-label">PNG</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="webp-format" name="format" value="image/webp">
+                        <label for="webp-format" class="form-check-label" id="webp-format-label">WEBP</label>
+                    </div>
+                </div>
+            </fieldset>
+            <button class="btn btn-primary btn-lg" id="download-button">
+                Download
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>

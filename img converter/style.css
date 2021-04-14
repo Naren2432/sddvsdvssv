@@ -1,0 +1,142 @@
+body {
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.options {
+    /* background-color: aqua; */
+    margin-left: 2em;
+
+}
+
+.mycontainer {
+    display: grid;
+    gap: 20px;
+    grid-template-areas: 'header header header header header'
+        'form-area form-area pic-area pic-area pic-area';
+
+}
+
+#quality-options {
+    grid-area: form-area;
+}
+
+.pic {
+    grid-area: pic-area;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.pic>input[type="button"] {
+    width: 80%;
+    color: white;
+    font-size: 2em;
+}
+
+fieldset {
+    width: 100%;
+    height: auto;
+}
+
+.options-label {
+    font-size: 2.5rem;
+    padding: 0.2em 1em;
+}
+
+
+.form-check-label {
+    font-size: 1.2rem;
+}
+
+input[type="radio"] {
+    transform: scale(1.5);
+    margin-top: 7px;
+}
+
+#download-button {
+    width: 50%;
+    display: inline;
+    justify-self: center;
+    margin: 0 5rem;
+}
+
+header {
+    grid-area: header;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 0.6em;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+
+    .mycontainer {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 200%;
+        margin: 0 auto;
+
+
+    }
+
+    header {
+
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    #quality-options {
+
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .pic {
+
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .preview {
+        display: none;
+    }
+
+    #download-button {
+        width: 50%;
+        display: inline-block;
+    }
+
+    .pic>input[type="button"] {
+        margin-top: 1em;
+
+        display: inline-block;
+        font-size: 1.2em;
+        padding: 0.5em 2em;
+        width: 10em;
+    }
+
+    .options-label {
+        font-size: 2em;
+        margin-right: 10em 0;
+    }
+
+}
